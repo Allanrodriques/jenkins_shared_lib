@@ -8,7 +8,8 @@
 
 def call(String awsaccount_id,String region, String ecr_repoName){
     sh """
-        trivy image ${awsaccount_id}.dkr.ecr.${region}.amazonaws.com/${ecr_repoName}:latest > scan.txt
-        cat scan.txt
+    trivy image ${awsaccount_id}.dkr.ecr.${region}.amazonaws.com/${ecr_repoName}:latest > scan.txt
+    cat scan.txt
     """
 }
+
