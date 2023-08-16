@@ -10,12 +10,6 @@
 // }
 // }
 def call(String awsaccount_id,String region, String ecr_repoName){
-    // sh "aws ecr get-login-password --region ${region} | docker login --username AWS --password-stdin ${awsaccount_id}.dkr.ecr.${region}.amazonaws.com"
-    // // sh " aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 195550950614.dkr.ecr.us-east-1.amazonaws.com"
-    // sh "docker push ${awsaccount_id}.dkr.ecr.${region}.amazonaws.com/${ecr_repoName}:latest"
-    sh """
-        aws ecr get-login-password --region ${region} | docker login --username AWS --password-stdin ${awsaccount_id}.dkr.ecr.${region}.amazonaws.com
-        docker push ${awsaccount_id}.dkr.ecr.${region}.amazonaws.com/${ecr_repoName}:latest
-    """
-}  
-
+    sh "aws ecr get-login-password --region ${region} | docker login --username AWS --password-stdin ${awsaccount_id}.dkr.ecr.${region}.amazonaws.com"
+    sh "docker push ${awsaccount_id}.dkr.ecr.${region}.amazonaws.com/${ecr_repoName}:latest"
+} 
