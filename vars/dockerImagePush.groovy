@@ -17,3 +17,4 @@ def call(String awsaccount_id,String region, String ECR_REPO_NAME){
 } 
 // docker push public.ecr.aws/r1f4w1h4/springboot-chat-app:latest
 //     docker push ${awsaccount_id}.dkr.ecr.${region}.amazonaws.com/${ecr_repoName}:latest
+// 407965543264.dkr.ecr.us-east-1.amazonaws.com/springboot-chat-app:latest
