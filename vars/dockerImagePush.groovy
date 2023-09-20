@@ -12,7 +12,7 @@
 def call(String awsaccount_id,String region, String ecr_repoName){
     sh """
     aws ecr get-login-password --region ${region} | docker login --username AWS --password-stdin ${awsaccount_id}.dkr.ecr.us-east-1.amazonaws.com
-    docker push public.ecr.aws/r1f4w1h4/${ecr_repoName}:latest
+    docker push ${awsaccount_id}.dkr.ecr.${region}.amazonaws.com/${ecr_repoName}:latest
     """
 } 
 // docker push public.ecr.aws/r1f4w1h4/springboot-chat-app:latest
